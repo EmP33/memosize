@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: var(--color-secondary);
   padding: 12px 12px 24px 12px;
-  max-width: 300px;
+  min-width: 300px;
   height: auto;
 
   @media only screen and (max-width: 600px) {
@@ -27,7 +27,10 @@ export const Container = styled.div`
     }
   }
 
-  & button {
+  & > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
     width: 100%;
     font-size: 20px;
     background-color: var(--color-primary-dark);
