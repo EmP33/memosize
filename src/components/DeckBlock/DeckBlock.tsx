@@ -17,11 +17,15 @@ const DeckBlock: React.FC<Props> = ({ element }) => {
       onClick={() => navigate(`/deck/${params.deckID}/element/${element.id}`)}
     >
       <h2>{element.front}</h2>
-      <p>
-        {element.back.length > 100
-          ? element.back.slice(0, 100) + "..."
-          : element.back}
-      </p>
+      <p
+        dangerouslySetInnerHTML={{
+          __html:
+            element.back.length > 100
+              ? element.back.slice(0, 100) + "..."
+              : element.back,
+        }}
+      ></p>
+
       <span></span>
     </Container>
   );

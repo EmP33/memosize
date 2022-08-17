@@ -9,6 +9,16 @@ export const Container = styled.main`
   display: grid;
   justify-items: center;
   padding: 1rem;
+  align-content: flex-start;
+
+  @media only screen and (max-width: 1200px) {
+    width: 90%;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+  }
 
   & > .actions {
     display: flex;
@@ -25,6 +35,10 @@ export const Container = styled.main`
       color: var(--color-white);
       border-radius: 5px;
       cursor: pointer;
+
+      @media only screen and (max-width: 600px) {
+        width: 50vw;
+      }
 
       &[data-type="back"] {
         background-color: var(--color-primary-dark);
@@ -44,11 +58,30 @@ export const Container = styled.main`
     width: 50%;
     text-align: center;
 
+    @media only screen and (max-width: 1200px) {
+      width: 90%;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+
     & > h2 {
       font-size: 2rem;
     }
     & > p {
       font-size: 1.2rem;
+
+      & > ul {
+        text-align: left;
+      }
+    }
+
+    & span {
+      display: block;
+      width: 100%;
+      height: 0.75rem;
+      border-radius: 5px;
+      background-color: var(--color-primary-dark);
     }
   }
 `;

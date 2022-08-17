@@ -7,5 +7,5 @@ export interface deckElementType {
   back: string;
   front: string;
   id: number;
-  status: 0 | 1 | 2;
+  status?: 0 | 1 | 2;
 }

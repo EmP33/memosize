@@ -19,7 +19,7 @@ const RepetitionBlock: React.FC<Props> = ({ deck }) => {
         <GiGraduateCap />
       </div>
       <RepetitionStatus />
-      <p>1 of 2 cards</p>
+      <p>{deck.elements ? deck.elements.length : 0} cards</p>
       <Link to={`/deck/${deck.id}`}>VIEW</Link>
     </Container>
   );
