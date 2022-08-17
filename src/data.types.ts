@@ -8,4 +8,5 @@ export interface deckElementType {
   front: string;
   id: number;
   status?: 0 | 1 | 2;
+  active?: boolean;
 }

@@ -7,6 +7,7 @@ import GlobalStyle from "./App.styles";
 import DeckPage from "./pages/DeckPage/DeckPage";
 import ElementPage from "./pages/ElementPage/ElementPage";
 import HomePage from "./pages/HomePage/HomePage";
+import LearnPage from "./pages/LearnPage/LearnPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           path="/deck/:deckID/element/:elementID"
           element={<ElementPage />}
         />
+        <Route path="/deck/:deckID/learn" element={<LearnPage />} />
       </Routes>
     </>
   );

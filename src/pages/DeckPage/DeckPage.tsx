@@ -37,7 +37,12 @@ const DeckPage = () => {
         <button data-type="back" onClick={() => navigate("/")}>
           COFNIJ
         </button>
-        <button data-type="learn">UCZ SIĘ</button>
+        <button
+          data-type="learn"
+          onClick={() => navigate(`/deck/${params.deckID}/learn`)}
+        >
+          UCZ SIĘ
+        </button>
       </div>
       <div className="elements">
         {deck?.elements
