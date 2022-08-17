@@ -10,20 +10,26 @@ import { deckType } from "../../data.types";
 import { Container } from "./DeckPage.styles";
 //Components
 import DeckBlock from "../../components/DeckBlock/DeckBlock";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 const DeckPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [deck, setDeck] = useState<deckType | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
+    setLoading(true);
     const deckRef = ref(database, `decks/${params.deckID}`);
     onValue(deckRef, (snapshot) => {
       const data = snapshot.val();
       setDeck(data);
+      setLoading(false);
     });
   }, []);
 
-  console.log(deck);
+  if (loading) {
+    return <LoadingPage />;
+  }
 
   return (
     <Container>

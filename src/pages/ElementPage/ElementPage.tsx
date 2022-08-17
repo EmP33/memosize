@@ -6,13 +6,16 @@ import { database } from "../../firebase";
 import { Container } from "./ElementPage.styles";
 // Types
 import { deckElementType } from "../../data.types";
+// Components
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 const ElementPage = () => {
   const navigate = useNavigate();
   const params = useParams();
-
+  const [loading, setLoading] = useState<boolean>(true);
   const [element, setElement] = useState<deckElementType | null>(null);
   useEffect(() => {
+    setLoading(true);
     const deckRef = ref(
       database,
       `decks/${params.deckID}/elements/${params.elementID}`
@@ -20,8 +23,13 @@ const ElementPage = () => {
     onValue(deckRef, (snapshot) => {
       const data = snapshot.val();
       setElement(data);
+      setLoading(false);
     });
   }, []);
+
+  if (loading) {
+    return <LoadingPage />;
+  }
 
   return (
     <Container>
@@ -37,6 +45,7 @@ const ElementPage = () => {
         <div className="element">
           <h2>{element.front}</h2>
           <p dangerouslySetInnerHTML={{ __html: element.back }}></p>
+
           <span></span>
         </div>
       ) : (

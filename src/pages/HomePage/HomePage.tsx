@@ -5,18 +5,27 @@ import { database } from "../../firebase";
 import { Container } from "./HomePage.styles";
 // Components
 import RepetitionBlock from "../../components/RepetitionBlock/RepetitionBlock";
+import LoadingPage from "../LoadingPage/LoadingPage";
 // Types
 import { deckType } from "../../data.types";
 
 const HomePage = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [decks, setDecks] = useState<deckType[]>([]);
+
   useEffect(() => {
+    setLoading(true);
     const deckRef = ref(database, "decks");
     onValue(deckRef, (snapshot) => {
       const data = snapshot.val();
       setDecks(data);
+      setLoading(false);
     });
   }, []);
+
+  if (loading) {
+    return <LoadingPage />;
+  }
 
   return (
     <Container>
