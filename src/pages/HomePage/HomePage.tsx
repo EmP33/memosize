@@ -5,9 +5,11 @@ import { database } from "../../firebase";
 import { Container } from "./HomePage.styles";
 // Components
 import RepetitionBlock from "../../components/RepetitionBlock/RepetitionBlock";
+// Types
+import { deckType } from "../../data.types";
 
 const HomePage = () => {
-  const [decks, setDecks] = useState<any[]>([]);
+  const [decks, setDecks] = useState<deckType[]>([]);
   useEffect(() => {
     const deckRef = ref(database, "decks");
     onValue(deckRef, (snapshot) => {
