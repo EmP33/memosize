@@ -1,46 +1,72 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](https://res.cloudinary.com/dtbemnmn4/image/upload/v1660758912/github/logo_ae45i2.png)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+A project that brings together recruitment questions from several technologies and presents them in an easy-to-learn manner
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+**Client:** React, TypeScript, Styled-Components, React-Router-Dom
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Server:** Firebase
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo
+https://res.cloudinary.com/dtbemnmn4/video/upload/v1660758098/github/1aa41b27-c0a7-4649-819b-177d5f71f613_w6lloc.webm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## FAQ
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Do I need an account to use this site?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+No
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Color Reference
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| --color-primary | ![#1CB481](https://via.placeholder.com/10/1CB481?text=+) #1CB481 |
+| --color-secondary | ![#424b51](https://via.placeholder.com/10/424b51?text=+) #424b51 |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Screenshots
+
+![App Screenshot](https://res.cloudinary.com/dtbemnmn4/image/upload/v1660758722/github/1_koo9xr.png)
+![App Screenshot](https://res.cloudinary.com/dtbemnmn4/image/upload/v1660758722/github/2_apy9lw.png)
+![App Screenshot](https://res.cloudinary.com/dtbemnmn4/image/upload/v1660758722/github/3_w4fsib.png)
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_API_KEY`
+
+`REACT_APP_AUTH_DOMAIN`
+
+`REACT_APP_DATABASE_URL`
+
+`REACT_APP_PROJECT_ID`
+
+`REACT_APP_STORAGE_BUCKET`
+
+`REACT_APP_MESSAGING_SENDER_ID`
+
+`REACT_APP_APP_ID`
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at purwinmarek16@gmail.com
+
+
+## Author
+
+[@EmP33](https://github.com/EmP33)
+
