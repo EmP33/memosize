@@ -23,14 +23,12 @@ const LearnPage = () => {
   const navigate = useNavigate();
   const [deck, setDeck] = useState<deckType | null>(null);
   const [deckElements, setDeckElements] = useState<deckElementType[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
-    setLoading(true);
     const deckRef = ref(database, `decks/${params.deckID}`);
     onValue(deckRef, (snapshot) => {
       const data = snapshot.val();
       setDeck(data);
-      setLoading(false);
     });
   }, []);
 
@@ -60,7 +58,7 @@ const LearnPage = () => {
     }
   }, [deck]);
 
-  if (loading) {
+  if (!deckElements.length) {
     return <LoadingPage />;
   }
   return (

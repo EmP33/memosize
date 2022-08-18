@@ -29,8 +29,8 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div<{ elActive: boolean }>`
-  width: 100%;
-  height: 50vh;
+  width: 95%;
+  height: 60vh;
   text-align: center;
   cursor: pointer;
   position: realtive;
@@ -40,19 +40,27 @@ export const Card = styled.div<{ elActive: boolean }>`
   transform: ${(props) => (props.elActive ? "rotateY(0.5turn)" : "")};
   filter: blur(200%);
   border-radius: 30px;
+  margin: 0 auto;
 
   ul {
     text-align: left;
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    @media only screen and (max-width: 1200px) {
+      font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 1.4rem;
+    }
   }
   .front {
     border-radius: 30px;
     background-color: var(--color-secondary);
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
