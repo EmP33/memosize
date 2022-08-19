@@ -6,9 +6,11 @@ import { Container } from "./RepetitionBlock.styles";
 import RepetitionStatus from "../RepetitionStatus/RepetitionStatus";
 // Icons
 import { GiGraduateCap } from "react-icons/gi";
+//Types
+import { deckType } from "../../data.types";
 
 interface Props {
-  deck: any;
+  deck: deckType;
 }
 
 const RepetitionBlock: React.FC<Props> = ({ deck }) => {
@@ -19,7 +21,9 @@ const RepetitionBlock: React.FC<Props> = ({ deck }) => {
         <GiGraduateCap />
       </div>
       <RepetitionStatus />
-      <p>{deck.elements ? deck.elements.length : 0} cards</p>
+      <p data-testid="cardtest">
+        {deck.elements ? deck.elements.length : 0} cards
+      </p>
       <Link to={`/deck/${deck.id}`}>VIEW</Link>
     </Container>
   );

@@ -14,6 +14,7 @@ const DeckBlock: React.FC<Props> = ({ element }) => {
   const navigate = useNavigate();
   return (
     <Container
+      data-testid="deckblock"
       onClick={() => navigate(`/deck/${params.deckID}/element/${element.id}`)}
     >
       <h2>{element.front}</h2>
