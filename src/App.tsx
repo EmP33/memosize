@@ -8,10 +8,14 @@ import DeckPage from "./pages/DeckPage/DeckPage";
 import ElementPage from "./pages/ElementPage/ElementPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LearnPage from "./pages/LearnPage/LearnPage";
+import RandomCardPage from "./pages/RandomCardPage/RandomCardPage";
+// Store
+import store from "./store";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -21,8 +25,9 @@ function App() {
           element={<ElementPage />}
         />
         <Route path="/deck/:deckID/learn" element={<LearnPage />} />
+        <Route path="/decks/random" element={<RandomCardPage />} />
       </Routes>
-    </>
+    </Provider>
   );
 }
 

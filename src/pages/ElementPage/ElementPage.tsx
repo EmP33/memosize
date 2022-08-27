@@ -45,6 +45,7 @@ const ElementPage = () => {
         <div className="element">
           <h2>{element.front}</h2>
           <p dangerouslySetInnerHTML={{ __html: element.back }}></p>
+
           <span></span>
         </div>
       ) : (

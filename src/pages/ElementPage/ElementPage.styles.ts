@@ -71,7 +71,8 @@ export const Container = styled.main`
     & > p {
       font-size: 1.2rem;
 
-      & > ul {
+      & > ul,
+      ol {
         text-align: left;
       }
     }

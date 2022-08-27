@@ -138,3 +138,32 @@ export const Container = styled.main`
     }
   }
 `;
+
+export const RandomButton = styled.button`
+  z-index: 5;
+  width: 4rem;
+  height: 4rem;
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 3%;
+  top: 3%;
+
+  @media only screen and (max-width: 600px) {
+    right: 1%;
+    top: 0.5%;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    filter: brightness(110%);
+  }
+`;

@@ -1,35 +1,30 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+`;
 
-  & button {
-    position: absolute;
-    left: 50%;
-    top: 2%;
-    width: 250px;
-    height: 50px;
-    transform: translateX(-50%);
-    border: 2px solid var(--color-secondary);
-    outline: none;
-    background: var(--color-primary-dark);
-    color: var(--color-white);
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
+export const Wrapper404 = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--color-secondary);
+  align-content: center;
 
-    &:hover {
-      filter: brightness(115%);
-    }
+  & > h1 {
+    margin: 0;
+  }
+  & a {
+    color: #fff;
   }
 `;
 
 export const Card = styled.div<{ elActive: boolean }>`
-  width: 95%;
+  width: 50%;
   height: 65vh;
   text-align: center;
   cursor: pointer;
@@ -41,6 +36,14 @@ export const Card = styled.div<{ elActive: boolean }>`
   filter: blur(200%);
   border-radius: 30px;
   margin: 0 auto;
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
+  @media only screen and (max-width: 600px) {
+    min-height: 100vh;
+    border-radius: 0;
+  }
 
   ul {
     text-align: left;
