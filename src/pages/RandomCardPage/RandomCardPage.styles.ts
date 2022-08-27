@@ -5,6 +5,19 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: grid;
   place-items: center;
+
+  .actions {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    display: flex;
+    column-gap: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      right: 1%;
+      top: 0.5%;
+    }
+  }
 `;
 
 export const Wrapper404 = styled.div`

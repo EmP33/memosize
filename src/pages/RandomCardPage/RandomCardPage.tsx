@@ -9,6 +9,7 @@ import { RandomButton } from "../HomePage/HomePage.styles";
 import { Wrapper, Wrapper404, Card } from "./RandomCardPage.styles";
 // Icons
 import { GiReturnArrow } from "react-icons/gi";
+import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 
 const RandomCardPage = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const RandomCardPage = () => {
   const [element, setElement] = useState<deckElementType | null>(null);
   const decks = useAppSelector((state) => state.decks);
 
-  useEffect(() => {
+  const randomizeElement = () => {
     setElement(
       decks.map((deck: deckType) => deck.elements).flat()[
         Math.floor(
@@ -26,6 +27,10 @@ const RandomCardPage = () => {
         )
       ]
     );
+  };
+
+  useEffect(() => {
+    randomizeElement();
   }, []);
 
   const rotateCardHandler = () => {
@@ -44,9 +49,15 @@ const RandomCardPage = () => {
   }
   return (
     <Wrapper>
-      <RandomButton onClick={() => navigate("/")}>
-        <GiReturnArrow />
-      </RandomButton>
+      <div className="actions">
+        <RandomButton onClick={randomizeElement}>
+          <GiPerspectiveDiceSixFacesRandom />
+        </RandomButton>
+        <RandomButton onClick={() => navigate("/")}>
+          <GiReturnArrow />
+        </RandomButton>
+      </div>
+
       {!element ? (
         ""
       ) : (

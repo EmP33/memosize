@@ -39,10 +39,12 @@ const HomePage = () => {
   return (
     <Container>
       <h1>Memosize</h1>
-      <RandomButton onClick={() => navigate("/decks/random")}>
-        <GiPerspectiveDiceSixFacesRandom />
-      </RandomButton>
-      <div>
+      <div className="actions">
+        <RandomButton onClick={() => navigate("/decks/random")}>
+          <GiPerspectiveDiceSixFacesRandom />
+        </RandomButton>
+      </div>
+      <div className="decks">
         <h1>Memosize</h1>
 
         {decks.map((deck) => (

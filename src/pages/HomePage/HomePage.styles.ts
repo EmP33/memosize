@@ -8,6 +8,19 @@ export const Container = styled.main`
   flex-direction: column;
   position: relative;
 
+  .actions {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    display: flex;
+    column-gap: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      right: 1%;
+      top: 0.5%;
+    }
+  }
+
   & > h1 {
     margin: 0;
     margin-bottom: 16px;
@@ -97,7 +110,7 @@ export const Container = styled.main`
     }
   }
 
-  & > div {
+  & > .decks {
     width: 60%;
     padding: 16px;
     display: flex;
@@ -151,9 +164,6 @@ export const RandomButton = styled.button`
   color: var(--color-primary);
   border-radius: 10px;
   cursor: pointer;
-  position: absolute;
-  right: 3%;
-  top: 3%;
 
   @media only screen and (max-width: 600px) {
     right: 1%;
