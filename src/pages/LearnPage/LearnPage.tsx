@@ -25,6 +25,7 @@ const LearnPage = () => {
   const [deckElements, setDeckElements] = useState<deckElementType[]>([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const deckRef = ref(database, `decks/${params.deckID}`);
     onValue(deckRef, (snapshot) => {
       const data = snapshot.val();

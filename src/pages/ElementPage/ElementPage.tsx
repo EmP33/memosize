@@ -15,6 +15,7 @@ const ElementPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [element, setElement] = useState<deckElementType | null>(null);
   useEffect(() => {
+    window.scrollTo(0, 0);
     setLoading(true);
     const deckRef = ref(
       database,

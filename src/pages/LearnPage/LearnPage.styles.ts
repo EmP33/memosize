@@ -33,7 +33,7 @@ export const Card = styled.div<{ elActive: boolean }>`
   height: 65vh;
   text-align: center;
   cursor: pointer;
-  position: realtive;
+  position: relative;
   transition: 0.5s ease-in-out;
   transform-style: preserve-3d;
   background: linear-gradient(45deg, #22222f, #232331);
@@ -87,5 +87,11 @@ export const Card = styled.div<{ elActive: boolean }>`
     -webkit-box-reflect: below 0
       linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
     transform: rotateY(0.5turn);
+    overflow: auto;
+
+    @media only screen and (max-width: 900px) {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
   }
 `;

@@ -18,6 +18,7 @@ export const Container = styled.main`
     width: 100%;
     min-height: 100vh;
     border-radius: 0;
+    overflow: hidden;
   }
 
   & > .actions {
@@ -57,6 +58,7 @@ export const Container = styled.main`
     margin: 2rem;
     width: 50%;
     text-align: center;
+    overflow: hidden;
 
     @media only screen and (max-width: 1200px) {
       width: 90%;
@@ -67,9 +69,18 @@ export const Container = styled.main`
 
     & > h2 {
       font-size: 2rem;
+      word-break: normal;
+
+      @media only screen and (max-width: 400px) {
+        font-size: 1.6rem;
+      }
     }
     & > p {
       font-size: 1.2rem;
+
+      @media only screen and (max-width: 400px) {
+        font-size: 1.1rem;
+      }
 
       & > ul,
       ol {
