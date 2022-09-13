@@ -18,15 +18,18 @@ const RandomCardPage = () => {
   const decks = useAppSelector((state) => state.decks);
 
   const randomizeElement = () => {
-    setElement(
-      decks.map((deck: deckType) => deck.elements).flat()[
-        Math.floor(
-          Math.random() *
-            decks.map((deck: deckType) => deck.elements).flat().length -
-            1
-        )
-      ]
-    );
+    setRotateStatus(false);
+    setTimeout(() => {
+      setElement(
+        decks.map((deck: deckType) => deck.elements).flat()[
+          Math.floor(
+            Math.random() *
+              decks.map((deck: deckType) => deck.elements).flat().length -
+              1
+          )
+        ]
+      );
+    }, 300);
   };
 
   useEffect(() => {
